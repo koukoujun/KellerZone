@@ -1,0 +1,142 @@
+/**
+移动端网页样式（公众号网页）
+*/
+/*公共样式*/
+html{font-family:'冬青黑体简体中文','微软雅黑',Arial,sans-serif;}
+body,div,dl,dt,dd,ul,ol,li,h2,form,fieldset,input,button,textarea,p,th,td{-webkit-tap-highlight-color: rgba(0,0,0,0);outline:none;padding:0;margin:0;font-family:Microsoft YaHei,sans-serif,Arial;font-size:14px;}
+/* image{will-change: transform;height: auto} */ /* 导致ios图片临时空白 */
+button{outline: none;border:none}
+button::after{ border: none; }
+input{outline: none;border:1px solid #eee;width:100%}
+::-webkit-scrollbar {display:none}
+/* 纯色 */
+.bg-white{background-color: #FFFFFF;}
+.bg-gray-f2{background-color: #f2f2f2;}
+/* 渐变色 */
+.backPinkTitle{
+	background: -webkit-linear-gradient(180deg,#ffffff,#ffffff,#ffffff,#ffffff,#ff9999);
+	background: linear-gradient(180deg,#ffffff,#ffffff,#ffffff,#ffffff,#ff9999);/* 标准语法 */ 
+	font-weight:900;color: #000000;font-size:28px; 
+}
+/* 颜色 */
+.txt-white{color: #FFFFFF;}
+.txt-black{color:#333333}
+.txt-red{color:#ff3300}
+.txt-green{color: #33cccc;}
+.txt-blue{color: #0099ff;}
+.txt-gray-666{color: #666666;}
+.txt-gray-999{color: #999999;}
+.txt-gray-ccc{color: #cccccc;}
+/* 透明度 */
+.opacity8{opacity: 0.8;}
+.opacity6{opacity: 0.6;}
+/* 文本换行 */
+.word-break{word-break:break-all}
+/* 字体大小 */
+.font60{font-size:60px}
+.font16{font-size:16px}
+.font15{font-size:15px}
+.font13{font-size:13px;}
+/* 字体间距 */
+.font-space{letter-spacing:2px}
+/* 字体粗细 */
+.font-weight900{font-weight:900}
+/* 文字缩进 */
+.text-indet2{text-indent:2}
+/* 文本 */
+.text-wrap{word-wrap:break-word}
+.no-style-input{outline:none;border:none;background: transparent}
+/* 文字行数 */
+.font-limit-ones{white-space:nowrap;overflow:hidden;-webkit-line-clamp:1;text-overflow:ellipsis;}
+.font-limit-one{overflow: hidden;text-overflow: ellipsis;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient: vertical;}
+.font-limit-two{overflow: hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient: vertical;}
+/* 下划线 */
+.txt-underline{text-decoration: underline;}
+/* 分割线 */
+hr{height:1px;border:none;border-top:1px solid rgba(109,109,109,0.3);margin: 0;padding: 0;}
+/* 定位 */
+.pos-ab{position:absolute}
+.pos-re{position:relative}
+.pos-fix{position:fixed}
+/* 弹性布局 */
+.flex{display:flex}
+.flex-row{flex-direction:row}
+.flex-col{flex-direction:column}
+.flex-bet{justify-content:space-between}
+.flex-start{justify-content:flex-start}
+.flex-end{justify-content:flex-end}
+.flex-aro{justify-content:space-around}
+.flex-eve{justify-content:space-evenly}
+.flex-item-bottom{align-items:flex-end}
+.flex-item-center{align-items:center}
+.flex-centers{justify-content:center}
+.flex-center{justify-content:center;align-items: center}
+.flex-wrap{flex-wrap:wrap}
+.flex-basis-50{flex-basis: 50%}
+/* 边角 */
+.radius4{border-radius:40px}
+/* 边线 */
+.border-gray{border:1px solid #cccccc}
+/* 投影 */
+.box-shadow-gray{box-shadow:0 0 40px 40px rgba(204,204,204,0.6)}
+/* 水平 */
+.text-center{text-align:center}
+.text-left{text-align:left}
+.text-right{text-align:right}
+/* 垂直居中 */
+.vertical-box{display:table}
+.vertical{vertical-align:middle;display:table-cell}
+.vertical-middle{vertical-align:middle}
+.vertical-bottom{vertical-align:bottom;display: table-cell;}
+/* 浮动 */
+.float-r{float:right}
+.float-l{float:left}
+/* width% */
+.w100{width:100%}
+/*------- width------ */
+.w-20{width:20px;}
+/*------ height------ */
+.h-20{height:20px}
+/* line-height */
+.line-h20{line-height:20px}
+/* vh-height */
+.vh-100{height:100vh;}
+.vh-10{height:10vh;}
+/*------ margin------ */
+.margin10{margin:10px}
+/* margin-bottom */
+.marb20{margin-bottom:20px}
+/* margin-left */
+.marl20{margin-left:20px}
+/* margin-right */
+.marr20{margin-right:0.2px}
+/* margin-top */
+.mart20{margin-top:20px}
+/* ------ padding ------ */
+.padding20{padding:20px}
+/* padding-right */
+.padr20{padding-right:20px}
+/* padding-bottom */
+.padb20{padding-bottom:20px}
+/* padding-top */
+.padt20{padding-top:20px}
+/* padding-around */
+.padding-tb10-lr20{padding:10px 20px}
+/* ------ top&&bottom ------ */
+.top0{top: 0;}
+/* 缩放比例 */
+.scale9{transform: scale(0.9);}
+.scale8{transform: scale(0.8);}
+/* 层级 */
+.index100{z-index: 100;}
+/* 模糊 */
+.fliter{-webkit-filter: blur(4px);filter: blur(4px);}
+/* 横向可滑动展示 */
+.row-slide{display: -webkit-box;overflow-x: scroll;-webkit-overflow-scrolling: touch;}
+/* 纵向滑动展示 */
+.line-slide{overflow-y: scroll;}
+.xxx{border: 1px solid #000000;}
+
+/* 页面通用样式 */
+/* 宽度fill */
+.klz-widthfill{width:100%;margin:0;padding:0;overflow-x: hidden;}
