@@ -29,6 +29,7 @@ require('video.js/dist/video-js.css')
 require('vue-video-player/src/custom-theme.css')
 Vue.use(VideoPlayer)
 
+
 //路由钩子
 router.beforeEach((to, from, next) => {
   // 切换路由页面返回顶部

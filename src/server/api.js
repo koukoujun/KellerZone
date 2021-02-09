@@ -1,12 +1,18 @@
 // api 接口列表
 const api = {
+  apiTest:{
+    test:'home/test',
+    logout:'user/logout'
+  },
   // 用户
   apiUser: {
     list:'user',
     user:'user/user',
     add:'user/add',
     login:'user/login',
-    update:'user/update'
+    update:'user/update',
+    //
+    register:'user/register'
   },
   // job space
   apiJobSpace: {

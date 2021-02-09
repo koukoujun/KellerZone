@@ -12,6 +12,18 @@ export default {
       return {
           transitionName:'slide-base'
       }
+  },
+  methods: {
+    //App.vue
+    isMobile() {
+      let flag = navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)
+      return flag;
+    }
+  },
+  mounted() {
+    if (this.isMobile()) {
+      this.$router.replace({path:'/error',query:{status:'mobile'}});
+    }
   }
 }
 </script>

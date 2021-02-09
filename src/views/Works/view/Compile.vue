@@ -219,7 +219,7 @@ export default {
             center: true,
           });
           setTimeout(() => {
-            this.$router.push("/works");
+            this.$router.push("/works/resume");
           }, 1000);
         })
         .catch((err) => {
@@ -239,7 +239,7 @@ export default {
           });
           setTimeout(() => {
             //window跳转初始化formdata数据
-            window.location.href='/works'
+            this.$router.replace({path:'/works/resume'})
           }, 1000);
         })
         .catch((err) => {

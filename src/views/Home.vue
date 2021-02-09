@@ -4,7 +4,7 @@
     <!-- head -->
     <div class="head" >
        <div class="inner" >
-         <div>首页</div>
+         <div >首页</div>
          <div class="tab-title"  @click="Controller('jobspace')">职业空间</div>
          <div class="tab-title" @click="Controller('works')">自我展示</div>
          <div class="tab-title" @click="Controller('literature')">娱乐天地</div>
@@ -52,7 +52,7 @@
       <div class="list-center" >
         <el-carousel  trigger="click" height="320px" class="list-center-box"  >
           <el-carousel-item v-for="(item,index) in bannerDataScroll" :key="index">
-            <img :src="item.img" style="width:100%" @click="jumpLink('third',item.link)" >
+            <img :src="item.img" style="width:100%;height:100%" @click="jumpLink('third',item.link)" >
           </el-carousel-item>
         </el-carousel>
       </div>
@@ -87,7 +87,7 @@
           <div>官方QQ</div>
         </div>
         <div class="right" >
-          <img src="../assets/img/main/code_qq.png">
+          <img src="../assets/img/main/code_qq.png" >
         </div>
       </div>
       <div class="show_code">
@@ -166,26 +166,6 @@ export default {
     }
   },
   methods: {
-    //get init  data
-    getData () {
-      const params = {}
-      this.$Request.requestPost(params,this.$api.apiUser.list).then((res) => {
-        console.log(res)
-      }).catch((err) => {
-        console.log(err)
-      })
-    },
-    // get user msg
-    getUserMsg() {
-      this.$Request
-        .requestPost('', this.$api.apiUser.user)
-        .then((res) => {
-          sessionStorage.setItem('user_msg',JSON.stringify(res.data.data))
-        })
-        .catch((err) => {
-          console.error(err);
-        });
-    },
     // Controller
     Controller(name,param1){
       switch(name){
@@ -225,8 +205,6 @@ export default {
   },
   mounted () {
     this.$store.commit('tabClickIndexChange',0)
-    this.getData()
-    this.getUserMsg()
   },
   beforeCreate(){
     document.querySelector('body').setAttribute('style','background-color:rgba(255,255,255,1)')
@@ -292,6 +270,9 @@ export default {
         -moz-transition: all .3s ease;
         -ms-transition: all .3s ease;
         transition: all .3s ease;
+      }
+      .tab-title{
+        cursor: pointer;
       }
     }
   }
@@ -503,9 +484,9 @@ export default {
         width:50%;
         img{
           position: absolute;
-          width:180px;
+          width:7vw;
           margin-top:-50px;
-          margin-left:-50px;
+          margin-left:-1.5vw;
         }
       }
     };

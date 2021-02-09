@@ -8,7 +8,7 @@
         <!-- container-head -->
         <div class="container-head">
            <div class="col-left" >
-              <img :src="formData.avatar_url">
+              <img :src="formData.avatar_url" style="width:100px;height:100px" >
            </div>
            <div class="col-center" >
              <div class="row-name" >{{formData.user_name}}</div>

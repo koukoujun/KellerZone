@@ -1,6 +1,5 @@
 import axios from './axios'
 import qs from 'qs'
-import DOMAIN_NAME from './config.js'
 
 const requests = {
   // post 请求
@@ -30,7 +29,7 @@ const requests = {
   // formdata 上传文件
   requestFormData (data, path) {
     return axios(path, {
-      headers: { 'Content-Type': 'multipart/form-data','authorization':DOMAIN_NAME.TOKEN },
+      headers: { 'Content-Type': 'multipart/form-data','authorization':sessionStorage.getItem('token') },
       method: 'post',
       data: data,
       onUploadProgress: function (progressEvent) {

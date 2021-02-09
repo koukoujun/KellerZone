@@ -1,7 +1,10 @@
 <template>
   <div class="feedback">
     <!-- head -->
-    <Tab-navigation></Tab-navigation>
+    <Tab-navigation
+    :tabBtnList='tabBtnList'
+    @onSubmit='onSubmit'
+    ></Tab-navigation>
     <!-- content -->
     <div class="content">
       <el-form ref="form" :model="form" label-width="80px">
@@ -25,7 +28,10 @@ export default {
   name: "feedback",
   data() {
     return {
-      msg: "反馈留言",
+      //按钮列表
+      tabBtnList:[
+        {name:'提交',type:'func',func:'onSubmit',path:''}
+      ],
       form: {
           title: '',
           content: ''

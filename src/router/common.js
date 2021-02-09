@@ -2,9 +2,9 @@ export default [
   //404
   {
     path: "*",
-    name: "err404Page",
-    meta: { title: "404", keepAlive: false, auth: false },
-    component: () => import("@/views/Common/404.vue")
+    name: "errorPage",
+    meta: { title: "errorPage", keepAlive: false, auth: false },
+    component: () => import("@/views/Common/error.vue")
   },
   //视频播放
   {

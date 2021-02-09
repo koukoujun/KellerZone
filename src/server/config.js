@@ -1,9 +1,14 @@
 // REQUEST配置文件
 const DOMAIN_NAME = {
+  // 本地端口
+  //URL_DEVELOPMENT_MICRO: 'http://127.0.0.1:7001/',
+  URL_DEVELOPMENT_MICRO: 'http://121.37.137.148:9000/',
   // 测试端口
-  URL_TEST_MICRO: 'http://1.85.10.98:62/',
-  // 服务端口
-  URL_SERVER_MICRO: 'http://192.168.1.10:7001/',
+  URL_TEST_MICRO: 'http://121.37.137.148:9000/',
+  // 准生产(灰度)端口
+  URL_PREVIEW_MICRO: 'http://121.37.137.148:9000/',
+  // 生产端口
+  URL_PRODUCTION_MICRO: 'http://121.37.137.148:9000/',
   // HEADER
   REQUEST_HEADER: {
     application: 'application/x-www-form-urlencoded', // 请求体中的数据会以普通表单形式（键值对）发送到后端，“引入qs进行处理”
@@ -19,9 +24,7 @@ const DOMAIN_NAME = {
     Put: 'PUT', // 从客户端向服务器传送的数据取代指定的文档的内容
     Delete: 'DELETE', // 请求服务器删除指定的页面
     Trace: 'TRACE'// 回显服务器收到的请求，主要用于测试或诊断
-  },
-  //TOKEN
-  TOKEN:sessionStorage.getItem('token')
+  }
 }
 
 export default DOMAIN_NAME

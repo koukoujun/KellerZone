@@ -3,7 +3,6 @@
     <!-- head -->
     <Tab-navigation
      :tabMsgList='tabMsgList'
-     :tabBtnList='tabBtnList'
     ></Tab-navigation>
     <!-- content -->
     <div class="content">
@@ -47,10 +46,6 @@ export default {
       tabMsgList:[
         {name:'简历列表',path:'/works/resume'},
         {name:'个人作品',path:'/works/invalid_works'},
-      ],
-      //按钮列表
-      tabBtnList:[
-        {name:'写简历',type:'link',func:'',path:'/works/compile?type=add'}
       ],
       //参数
       listData:[
@@ -114,7 +109,8 @@ export default {
           }else if(param1 == '程序'){
             window.open(param2)
           }else if(param1 == '文章'){
-            this.$router.push({path:'/common/txtplayer',query:{src:encodeURI(param2)}})
+            this.$message.warning('阅读器功能开发中~')
+            //this.$router.push({path:'/common/txtplayer',query:{src:encodeURI(param2)}})
           }else if(param1 == '音频'){
             this.$router.push({path:'/common/soundplayer',query:{src:encodeURI(param2)}})
           }

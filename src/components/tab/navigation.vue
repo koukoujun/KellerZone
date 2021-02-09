@@ -191,6 +191,7 @@ export default {
 // hover
 .tab-title{
   color: #333333;
+  cursor: pointer;
 }
 .tab-title:hover{
   color:#409eff;

@@ -367,26 +367,26 @@ export default{
           return Number(str.replace(/translateX\(|px\)/g , ''))
       },
       // 秒值转字符串
-      timeToString(param){
+      timeToString(param:any){
           param = parseInt(param);
           let hh:any = '',mm:any = '',ss:any = '';
           if (param>=0 && param<60) {
               param<10? ss = '0'+ param :ss = param;
               return '00:'+ ss;
           } else if (param>=60 && param<3600) {
-              mm = parseInt(param / 60);
+              mm = (parseInt(param)/60).toString()
+              mm = parseInt(mm)
               mm<10?mm = '0'+mm :mm;
-              (param-parseInt(mm * 60))<10?ss='0'+ String(param-parseInt(mm * 60)) : ss =  param-parseInt(mm * 60);
+              const num = mm*60;
+              (param-num)<10?ss='0'+ String(param-num) : ss =  param-num;
               return mm + ':' +ss;
           }
         },
-
-
       //格式化时间
-			formatTime(num) {
-				return '0'.repeat(2 - String(Math.floor(num / 60)).length) + Math.floor(num / 60) + ':' + '0'.repeat(2 - String(
-					Math.floor(num % 60)).length) + Math.floor(num % 60)
-			},
+        formatTime(num) {
+            return '0'.repeat(2 - String(Math.floor(num / 60)).length) + Math.floor(num / 60) + ':' + '0'.repeat(2 - String(
+                Math.floor(num % 60)).length) + Math.floor(num % 60)
+        },
       Controller(name){
         switch(name){
           case 'play': 

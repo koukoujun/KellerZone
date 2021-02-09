@@ -10,9 +10,9 @@
           <div class="row-title" >头像</div>
           <div class="row-upload" >
              <el-image
-              style="width: 70px; height: 70px;margin-right:20px"
+              style="width: 70px; height: 70px;margin-right:20px;"
               :src="imageSingle.url"
-              fit="fit"></el-image>
+              fit="fill"></el-image>
              <Upload-file
               uploadType='file' 
               @getChildVal='getChildVal'
@@ -96,13 +96,15 @@ export default {
     // submit data
     submitData() {
       let formData = new FormData();
-      formData.append('image', this.imageSingle.file);
       formData.append('formData',JSON.stringify(this.formData));
+      formData.append('image', this.imageSingle.file);
       this.$Request
         .requestFormData(formData, this.$api.apiUser.update)
         .then((res) => {
           console.log(res)
-          this.$router.push({path:'/center'})
+          if(res.data.code == '1'){
+            this.$router.push({path:'/center'})
+          }
         })
         .catch((err) => {
           console.error(err);

@@ -78,8 +78,8 @@
   </div>
 </template>
 
-<script lang="ts">
-import AMap from "AMap"
+<script lang="js">
+import AMap from 'AMap';
 const Navigation = () => import("@/components/tab/navigation.vue");
 export default {
   components: {
@@ -257,8 +257,12 @@ export default {
             function onComplete(data) {
                 // data是具体的定位信息
                 console.log('定位成功信息：', data);
-                self.locationCity = data.addressComponent.city
-                self.getData()
+                if(data.addressComponent){
+                  self.locationCity = data.addressComponent.city
+                  self.getData()
+                }else{
+                  self.$message.error('当前定位失败，暂无法提供社会服务');
+                }
             }
 
             function onError(data) {
